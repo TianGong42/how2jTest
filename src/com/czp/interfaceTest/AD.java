@@ -1,0 +1,6 @@
+package com.czp.interfaceTest;
+
+public interface AD {
+			//ŒÔ¿Ì…À∫¶
+	public void physicAttack();
+}

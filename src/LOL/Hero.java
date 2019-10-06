@@ -1,5 +1,11 @@
 package LOL;
 
+import com.czp.interfaceTest.AD;
+import com.czp.interfaceTest.ADAPHero;
+import com.czp.interfaceTest.ADHero;
+import com.czp.interfaceTest.APHero;
+import com.czp.interfaceTest.Support;
+
 public class Hero {
 	
 	String name; //姓名
@@ -55,5 +61,54 @@ public class Hero {
 		teemo.armor = 14f;
 		teemo.moveSpeed = 330;
 		teemo.money = 350;
+		
+		/*
+		 * 类型转换指的时把一个引用指向对象的类型，转换为另一个引用的类型
+		 * 把ad引用所指的对象的类型是ADHero
+		 *h引用的类型是Hero
+		 *把ADHero当做Hero使用，一定是可以
+		 *所以子类转父类是可以做到的
+		 */
+		ADHero ad = new ADHero();
+		Hero h = new Hero();
+		h = ad;
+		
+		
+		//父类转子类
+		Hero h1 = new Hero();
+		ADHero a = new ADHero();
+		Support s = new Support();
+		
+//		h1 = ad;
+//		ad = (ADHero) h1;
+//		h1 = s;
+//		ad = (ADHero)h1;
+		
+		//实现类转换成接口（向上转型)
+		ADHero ad1 = new ADHero();
+		AD adi = ad;
+		
+		//接口转换成实现类（向下转型)
+//		ADHero ad2 = new ADHero();
+//		AD adi1 = ad2;
+//		ADHero adhero = (ADHero)adi1;
+//		ADAPHero adadHero = (ADAPHero)adi1;
+//		adadHero.magicAttack();
+		
+		//instanceof Hero 判断一个引用所指的对象，是否是Hero类型，或者Hero的子类
+		ADHero ada = new ADHero();
+		APHero apa = new APHero();
+		
+		Hero h4 = ada;
+		Hero h5 = apa;
+		
+		//
+		System.out.println(h4 instanceof ADHero);
+		
+		System.out.println(h5 instanceof APHero);
+		
+		System.out.println(h4 instanceof Hero);
+		
+		
 	}
 }
