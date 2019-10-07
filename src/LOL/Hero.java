@@ -46,7 +46,25 @@ public class Hero {
 		hp = hp + blood;
 	}
 	
+	//使用物品方法
+	public void useItem(Item i) {
+		i.effect();
+	}
+	
+	//杀死英雄
+	public void kill(Mortal m) {
+		m.die();
+	}
+	
+	
 	public static void main(String[] args) {
+		APHero ap1 = new APHero();
+		
+		
+		
+		LifePotion lp = new LifePotion();
+		MagicPotion mp = new MagicPotion();
+		
 		Hero garen = new Hero();
 		garen.name = "盖伦";
 		garen.hp = 616.28f;
@@ -54,6 +72,9 @@ public class Hero {
 		garen.moveSpeed = 350;
 		garen.money = 350;
 		garen.addSpeed(100);
+		garen.useItem(lp);
+		garen.useItem(mp);
+		garen.kill(ap1);
 		
 		Hero teemo = new Hero();
 		teemo.name = "提莫";

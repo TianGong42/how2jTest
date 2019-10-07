@@ -1,8 +1,9 @@
 package com.czp.interfaceTest;
 
 import LOL.Hero;
+import LOL.Mortal;
 
-public class ADHero extends Hero implements AD{
+public class ADHero extends Hero implements AD,Mortal{
 	/*
 	 * (non-Javadoc)
 	 * @see com.czp.interfaceTest.AD#physicAttack()
@@ -16,5 +17,9 @@ public class ADHero extends Hero implements AD{
 	@Override
 	public void physicAttack() {
 		System.out.println("进行物理攻击");
+	}
+	@Override
+	public void die() {
+		System.out.println("AD英雄死亡");
 	}
 }

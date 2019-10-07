@@ -1,8 +1,9 @@
 package com.czp.interfaceTest;
 
 import LOL.Hero;
+import LOL.Mortal;
 
-public class ADAPHero extends Hero implements AD,AP{
+public class ADAPHero extends Hero implements AD,AP,Mortal{
 
 	@Override
 	public void magicAttack() {
@@ -12,5 +13,10 @@ public class ADAPHero extends Hero implements AD,AP{
 	@Override
 	public void physicAttack() {
 		System.out.println("进行物理攻击");
+	}
+	
+	@Override
+	public void die() {
+		System.out.println("物理魔法死亡");
 	}
 }
