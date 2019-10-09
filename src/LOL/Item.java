@@ -13,6 +13,22 @@ public class Item {
 		System.out.println("物品使用户后，可以由效果");
 	}
 	
+	public String toString() {
+		return name + price;
+	}
+	
+	public void finalize() {
+		System.out.println("当前对象正在被回收");
+	}
+	
+	public boolean equals(Object o) {
+		if(o instanceof Item) {
+			Item i = (Item)o;
+			return this.name == i.name & this.price == i.price;
+		}
+		return false;
+	}
+	
 	public static void main(String[] args) {
 		/*
 		 * 1、i1和i2都是item类型
